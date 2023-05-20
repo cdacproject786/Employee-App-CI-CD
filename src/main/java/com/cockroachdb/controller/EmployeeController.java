@@ -37,6 +37,7 @@ public class EmployeeController {
     @ApiResponse(responseCode = "500",content = {@Content(schema = @Schema())})
     })
     @GetMapping("/employee")
+    @CrossOrigin(value = "*")
     public ResponseEntity<?> getAllStudents()
     {
         return new ResponseEntity<>(this.employeeService.getAllEmployee(), HttpStatus.OK);
@@ -55,6 +56,7 @@ public class EmployeeController {
             @ApiResponse(responseCode = "500",content = {@Content(schema = @Schema())})
     })
     @PostMapping("/employee")
+    @CrossOrigin(value = "*")
     public ResponseEntity<?> saveEmployee(@Valid @RequestBody EmployeeRequest request)
     {
         return new ResponseEntity<>(this.employeeService.saveEmployee(request),HttpStatus.OK);
@@ -72,6 +74,7 @@ public class EmployeeController {
             @ApiResponse(responseCode = "500",content = {@Content(schema = @Schema())})
     })
     @GetMapping("/employee/{id}")
+    @CrossOrigin(value = "*")
     public ResponseEntity<?> getEmployeeById(@PathVariable("id")Long id)
     {
         return new ResponseEntity<>(this.employeeService.getEmployeeById(id),HttpStatus.CREATED);
@@ -89,6 +92,7 @@ public class EmployeeController {
             @ApiResponse(responseCode = "500",content = {@Content(schema = @Schema())})
     })
     @PutMapping("/employee")
+    @CrossOrigin(value = "*")
     public ResponseEntity<?> updateEmployee(@RequestBody EmployeeRequest employeeRequest)
     {
         return new ResponseEntity<>(this.employeeService.updateEmployee(employeeRequest),HttpStatus.OK);
@@ -105,6 +109,7 @@ public class EmployeeController {
             @ApiResponse(responseCode = "500",content = {@Content(schema = @Schema())})
     })
     @DeleteMapping("/employee/{id}")
+    @CrossOrigin(value = "*")
     public ResponseEntity<?> deleteEmployee(@PathVariable("id")Long id)
     {
         return new ResponseEntity<>(null,HttpStatus.OK);
