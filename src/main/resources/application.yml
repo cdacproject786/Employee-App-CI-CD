@@ -10,7 +10,7 @@ spring:
       ddl-auto: create
   datasource:
     platform: postgres
-    url: jdbc:postgresql://postgresdb:5432/employee?sslmode=disable&user=postgres
+    url: jdbc:postgresql://postgresdb:5432/company?sslmode=disable&user=postgres
     username: postgres
     password: 123
     driverClassName: org.postgresql.Driver
@@ -19,4 +19,4 @@ spring:
 neo:
   openapi:
     dev-url: http://localhost:9001
-    prod-url: http://ec2-34-238-117-103.compute-1.amazonaws.com:9001
+    prod-url: http://ec2-54-173-131-164.compute-1.amazonaws.com:9001
