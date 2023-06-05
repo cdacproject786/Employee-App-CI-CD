@@ -45,13 +45,14 @@ jobs:
 
       - name: Checkout the file
         uses: actions/checkout@v2
-      - name: Docker Pull and run from DockerHub
-        uses: easingthemes/ssh-deploy@main
+      - name: Deploy to my EC2 instance
+        uses: easingthemes/ssh-deploy@v2.1.5
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.ACTION_PRIVATE_KEY }}
-          REMOTE_HOST: ec2-3-208-16-71.compute-1.amazonaws.com
-          REMOTE_USER: ec2-user
-          TARGET: ${{ secrets.TARGET_DIR }}
+            SSH_PRIVATE_KEY: ${{ secrets.ACTION_PRIVATE_KEY }}
+            SOURCE: "./"
+            REMOTE_HOST: "ec2-3-208-16-71.compute-1.amazonaws.com"
+            REMOTE_USER: "ec2-user"
+            TARGET: "/home/ec2-user/secret"
         with:
           ## host: ec2-3-208-16-71.compute-1.amazonaws.com
           ## username: ec2-user
