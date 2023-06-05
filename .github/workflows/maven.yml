@@ -53,6 +53,6 @@ jobs:
             docker stop employee-app
             docker rm -f employee-app
             docker pull arbaaz1602/employeeapp:latest
-            docker run --name employee-app -p 9001:9001 -e DB=postgresdb --network employeenetwork -d arbaaz1602/employeeapp:latest
+            docker run --name employee-app -p 9001:9001 -e DB=postgresdb --network employeenet -d arbaaz1602/employeeapp:latest
 
 
