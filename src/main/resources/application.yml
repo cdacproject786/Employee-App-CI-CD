@@ -2,7 +2,7 @@ server:
   port: 9001
 spring:
   application:
-    name : EMPLOYEE-NEW-SERVICE
+    name : EMPLOYEE-SERVICE
   jpa:
     database: POSTGRESQL
     show-sql: true
