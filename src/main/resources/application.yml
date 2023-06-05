@@ -19,4 +19,4 @@ spring:
 neo:
   openapi:
     dev-url: http://localhost:9001
-    prod-url: http://ec2-54-173-131-164.compute-1.amazonaws.com:9001
+    prod-url: ec2-54-81-208-216.compute-1.amazonaws.com:9001
