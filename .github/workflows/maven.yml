@@ -49,8 +49,8 @@ jobs:
         uses: easingthemes/ssh-deploy@main
         env:
           SSH_PRIVATE_KEY: ${{ secrets.ACTION_PRIVATE_KEY }}
-          REMOTE_HOST: ${ { secrets.HOST_DNS }}
-          REMOTE_USER: ${ { secrets.USERNAME }}
+          REMOTE_HOST: ec2-3-208-16-71.compute-1.amazonaws.com
+          REMOTE_USER: ec2-user
           TARGET: ${{ secrets.TARGET_DIR }}
         with:
           ## host: ec2-3-208-16-71.compute-1.amazonaws.com
