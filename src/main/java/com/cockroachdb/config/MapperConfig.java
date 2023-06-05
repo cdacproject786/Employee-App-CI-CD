@@ -11,6 +11,8 @@ public class MapperConfig {
     @Bean
     public ModelMapper modelMapper()
     {
+
+        Object object = new Object();
         return new ModelMapper();
     }
 }

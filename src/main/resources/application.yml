@@ -2,7 +2,7 @@ server:
   port: 9001
 spring:
   application:
-    name : EMPLOYEE-NEW-SERVICE
+    name : EMPLOYEE-SERVICE
   jpa:
     database: POSTGRESQL
     show-sql: true
@@ -19,4 +19,4 @@ spring:
 neo:
   openapi:
     dev-url: http://localhost:9001
-    prod-url: ec2-54-81-208-216.compute-1.amazonaws.com:9001
+    prod-url: ec2-3-208-16-71.compute-1.amazonaws.com:9001
