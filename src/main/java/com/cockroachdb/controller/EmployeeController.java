@@ -1,5 +1,6 @@
 package com.cockroachdb.controller;
 
+import com.cockroachdb.annotations.LogExecutionTime;
 import com.cockroachdb.dto.EmployeeRequest;
 import com.cockroachdb.dto.EmployeeResponse;
 import com.cockroachdb.dto.ExceptionResponse;
@@ -38,18 +39,12 @@ public class EmployeeController {
     })
     @GetMapping("/employee")
     @CrossOrigin(value = "*")
+    @LogExecutionTime
     public ResponseEntity<?> getAllStudents()
     {
         return new ResponseEntity<>(this.employeeService.getAllEmployee(), HttpStatus.OK);
     }
 
-
-
-
- /*   @Operation(
-            summary = "Save an Employee",
-            description = "Save a new Employee to the database",
-            tags = {"Employee","post"})*/
     @ApiResponses({
             @ApiResponse(responseCode = "201",content = {@Content(schema = @Schema(implementation = EmployeeResponse.class),mediaType = "application/json")}),
             @ApiResponse(responseCode = "404", content = {@Content(schema = @Schema())}),
@@ -57,6 +52,7 @@ public class EmployeeController {
     })
     @PostMapping("/employee")
     @CrossOrigin(value = "*")
+    @LogExecutionTime
     public ResponseEntity<?> saveEmployee(@Valid @RequestBody EmployeeRequest request)
     {
         return new ResponseEntity<>(this.employeeService.saveEmployee(request),HttpStatus.OK);
@@ -75,6 +71,7 @@ public class EmployeeController {
     })
     @GetMapping("/employee/{id}")
     @CrossOrigin(value = "*")
+    @LogExecutionTime
     public ResponseEntity<?> getEmployeeById(@PathVariable("id")Long id)
     {
         return new ResponseEntity<>(this.employeeService.getEmployeeById(id),HttpStatus.CREATED);
@@ -93,6 +90,7 @@ public class EmployeeController {
     })
     @PutMapping("/employee")
     @CrossOrigin(value = "*")
+    @LogExecutionTime
     public ResponseEntity<?> updateEmployee(@RequestBody EmployeeRequest employeeRequest)
     {
         return new ResponseEntity<>(this.employeeService.updateEmployee(employeeRequest),HttpStatus.OK);
@@ -110,6 +108,7 @@ public class EmployeeController {
     })
     @DeleteMapping("/employee/{id}")
     @CrossOrigin(value = "*")
+    @LogExecutionTime
     public ResponseEntity<?> deleteEmployee(@PathVariable("id")Long id)
     {
         return new ResponseEntity<>(null,HttpStatus.OK);

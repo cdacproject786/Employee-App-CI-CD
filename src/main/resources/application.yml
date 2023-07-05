@@ -2,7 +2,7 @@ server:
   port: 9001
 spring:
   application:
-    name : EMPLOYEE-NEW-SERVICE
+    name : EMPLOYEE-SERVICE
   jpa:
     database: POSTGRESQL
     show-sql: true
@@ -10,7 +10,7 @@ spring:
       ddl-auto: create
   datasource:
     platform: postgres
-    url: jdbc:postgresql://${DB:postgresdb}:5432/company?sslmode=disable&user=postgres
+    url: jdbc:postgresql://localhost:5432/company?sslmode=disable&user=postgres
     username: postgres
     password: 123
     driverClassName: org.postgresql.Driver

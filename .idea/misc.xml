@@ -7,11 +7,15 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/../../demo-drool/pom.xml" />
         <option value="$PROJECT_DIR$/../../sql-triggers-exp/pom.xml" />
+        <option value="$PROJECT_DIR$/../../mongodb-crud-operations/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/../../demo-drool/pom.xml" />
+        <option value="$PROJECT_DIR$/../../mongodb-crud-operations/pom.xml" />
+        <option value="$PROJECT_DIR$/../../sql-triggers-exp/pom.xml" />
       </set>
     </option>
   </component>

@@ -6,18 +6,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="sql-triggers" />
-        <module name="cockroachdb-CRUD" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="cockroachdb-CRUD" target="20" />
       <module name="demo-drool" target="20" />
+      <module name="mongodb-crud-operations" target="17" />
+      <module name="sql-triggers" target="20" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="cockroachdb-CRUD" options="-parameters" />
       <module name="demo-drool" options="-parameters" />
+      <module name="mongodb-crud-operations" options="-parameters" />
       <module name="sql-triggers" options="-parameters" />
     </option>
   </component>
