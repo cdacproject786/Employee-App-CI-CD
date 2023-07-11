@@ -14,13 +14,12 @@ name: Employee-App CI/CD
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
+
 
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       - uses: actions/checkout@v2
@@ -44,18 +43,21 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Deploy to AWS EC2 server
-        uses: appleboy/ssh-action@master
-        with:
-          host:
-          username: ec2-user
-          key: ${{secrets.ACTION_PRIVATE_KEY}}
-          envs: GITHUB_SHA
-          scripts: |
-            docker pull ${{secrets.DOCKER_REPOSITORY_IMAGE}}
-            docker stop ${{secrets.DOCKER_CONTAINER_NAME}}
-            docker rm -f ${{secrets.DOCKER_CONTAINER_NAME}}
-            docker rmi -f ${{secrets.DOCKER_REPOSITORY_IMAGE}}
-            docker run --detach --name ${{secrets.DOCKER_CONTAINER_NAME}} -p 8080:8080 -d ${{secrets.DOCKER_REPOSITORY_IMAGE}}_
+        run: docker pull ${{secrets.DOCKER_REPOSITORY_IMAGE}}  & docker stop ${{secrets.DOCKER_CONTAINER_NAME}} & docker rm -f ${{secrets.DOCKER_CONTAINER_NAME}} & docker rmi -f ${{secrets.DOCKER_REPOSITORY_IMAGE}} & docker run --detach --name ${{secrets.DOCKER_CONTAINER_NAME}} -p 8080:8080 -d ${{secrets.DOCKER_REPOSITORY_IMAGE}} &
+
+
+        # uses: appleboy/ssh-action@master
+        # with:
+         # host:
+         # username: ec2-user
+         # key: ${{secrets.ACTION_PRIVATE_KEY}}
+         # envs: GITHUB_SHA
+         # scripts: |
+            
+
+
+
+
         
 
 

@@ -15,6 +15,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Generated
 public class Employee {
 
     @Id

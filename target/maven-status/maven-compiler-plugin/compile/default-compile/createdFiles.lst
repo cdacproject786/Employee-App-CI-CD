@@ -4,12 +4,15 @@ com\cockroachdb\encrypt\protectDataSerializer.class
 com\cockroachdb\service\EmployeeService.class
 com\cockroachdb\entity\Employee.class
 com\cockroachdb\dto\EmployeeResponse.class
+com\cockroachdb\aspects\LoggingAspect.class
 com\cockroachdb\encrypt\MaskDada.class
 com\cockroachdb\exceptionhandler\GlobalExceptionHandler.class
 com\cockroachdb\service\EmployeeServiceImpl.class
 com\cockroachdb\dto\EmployeeRequest.class
 com\cockroachdb\config\MapperConfig.class
 com\cockroachdb\controller\EmployeeController.class
+com\cockroachdb\annotations\LogExecutionTime.class
 com\cockroachdb\repository\EmployeeRepository.class
+com\cockroachdb\entity\QEmployee.class
 com\cockroachdb\exception\ResourceNotFoundException.class
 com\cockroachdb\config\OpenApiConfig.class
