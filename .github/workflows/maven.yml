@@ -24,6 +24,7 @@ jobs:
 
   docker: 
      runs-on: ubuntu-latest
+     needs: build
      steps:
       - name: Login to docker hub
         uses: docker/login-action@v1
@@ -34,8 +35,8 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context:
-          push: true
-          tags: arbaaz1602/employeeapp:latest
+            push: true
+            tags: arbaaz1602/employeeapp:latest
 
       - name: Deploy to AWS EC2 server
         uses: appleboy/ssh-action@master
